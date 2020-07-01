@@ -4,6 +4,9 @@
 
 Github_explorer is a web apllication that use the github API to find repositories and users
 
+![github_explorer](https://user-images.githubusercontent.com/50886716/86296889-48f79c00-bbd0-11ea-8acc-deeeb9f3d216.gif)
+
+
 ## :computer: Technologies used
  
 * [Typescript](https://www.typescriptlang.org/) - The language used
