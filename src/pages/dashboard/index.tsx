@@ -1,8 +1,10 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
 import { FiChevronRight } from 'react-icons/fi';
 import api from '../../services/api';
 
-import { Title, Form, Repositories, Error } from './styles';
+import {
+ Title, Form, Repositories, Error
+} from './styles';
 
 import LogoImg from '../../assets/logo.svg';
 
@@ -18,7 +20,23 @@ interface Repository {
 const Dashboard: React.FC = () => {
   const [newRepo, setNewRepo] = useState('');
   const [inputError, setInputError] = useState('');
-  const [repositories, setRepositories] = useState<Repository[]>([]);
+  const [repositories, setRepositories] = useState<Repository[]>(() => {
+    const storagedRepositories = localStorage.getItem(
+      '@Github_explorer:repositories',
+    );
+
+    if (storagedRepositories) {
+      return JSON.parse(storagedRepositories);
+    }
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      '@Github_explorer:repositories',
+      JSON.stringify(repositories),
+    );
+  }, [repositories]);
 
   async function handleAddRepository(
     event: FormEvent<HTMLFormElement>,
@@ -51,7 +69,7 @@ const Dashboard: React.FC = () => {
         <input
           value={newRepo}
           placeholder="Pesquise um repositório"
-          onChange={(e) => setNewRepo(e.target.value)}
+          onChange={e => setNewRepo(e.target.value)}
         />
         <button type="submit">Pesquisar</button>
       </Form>
@@ -59,7 +77,7 @@ const Dashboard: React.FC = () => {
       {inputError && <Error>{inputError}</Error>}
 
       <Repositories>
-        {repositories.map((repository) => (
+        {repositories.map(repository => (
           <a key={repository.full_name} href="teste">
             <img
               src={repository.owner.avatar_url}
