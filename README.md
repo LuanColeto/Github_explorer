@@ -1,6 +1,6 @@
 # Github_explorer 
 
-### :bookmark: About
+### :bookmark: About 
 
 Github_explorer is a web apllication that use the github API to find repositories and users
 
