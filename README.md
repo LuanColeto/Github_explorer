@@ -2,7 +2,7 @@
 
 ## Confere aí: https://github-explorer-gilt.vercel.app/
 
-### :bookmark: About 
+### :bookmark: Sobre 
 
 Github_explorer é uma aplicação web que utiliza a API do Github para achar repositórios de usuários
 
@@ -22,7 +22,7 @@ Github_explorer é uma aplicação web que utiliza a API do Github para achar re
 
 ### Pré requesitos
 
-- You **need** to have a package manager installed in your machine **[npm](https://www.npmjs.com/)** or **[Yarn](https://yarnpkg.com/)**
+- Você **precisa** ter um package manager instalado na sua máquina **[npm](https://www.npmjs.com/)** ou **[Yarn](https://yarnpkg.com/)**
 
 ### :rocket: Como usar
 
@@ -48,7 +48,7 @@ Depois disso, rode a aplicação com
 yarn start
 ```
 
- :tada: **Congrats** O projeto já está prontinho, rodando em: (http://localhost:3000)
+ :tada: **Parabéns** O projeto já está prontinho, rodando em: (http://localhost:3000)
 
 
 
