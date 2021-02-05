@@ -89,7 +89,12 @@ const Repository: React.FC = () => {
 
       <Issues>
         {issues.map(issue => (
-          <a key={issue.id} target="_blank" href={issue.html_url}>
+          <a
+            rel="noopener noreferrer"
+            key={issue.id}
+            target="_blank"
+            href={issue.html_url}
+          >
             <div>
               <strong>{issue.title}</strong>
               <p>{issue.user.login}</p>
